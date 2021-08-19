@@ -58,12 +58,12 @@ end
 
 theme.loadEditor = function()
 	local editor = {
-		ColorColumn = { bg = p.highlight_overlay },
+		ColorColumn = { link = "CursorLine" },
 		-- Conceal = {},
 		-- Cursor = {},
 		CursorColumn = { bg = p.highlight },
 		-- CursorIM = {},
-		CursorLine = { bg = p.highlight_inactive },
+		CursorLine = { bg = p.highlight_2 },
 		CursorLineNr = { fg = p.text },
 		DarkenedPanel = { bg = p.surface },
 		DarkenedStatusline = { bg = p.surface },
@@ -75,12 +75,12 @@ theme.loadEditor = function()
 		diffRemoved = { fg = p.love },
 		diffChanged = { link = 'PreProc' },
 		Directory = { fg = p.foam, bg = p.none },
-		-- EndOfBuffer = {},
+		EndOfBuffer = { fg = p.base },
 		ErrorMsg = { fg = p.love, style = 'bold' },
 		FloatBorder = { fg = p.highlight, bg = p.surface },
 		FoldColumn = {},
-		Folded = { fg = p.text, bg = p.surface },
-		IncSearch = { bg = p.highlight },
+		Folded = { fg = p.gold, bg = p.surface },
+		IncSearch = { fg = p.love, style = 'reverse' },
 		LineNr = { fg = p.inactive },
 		MatchParen = { fg = p.text, bg = p.overlay },
 		-- ModeMsg = {},
@@ -107,10 +107,10 @@ theme.loadEditor = function()
 		-- StatusLineTermNC = {},
 		-- TabLine = {},
 		-- TabLineFill = {},
-		-- TabLineSel = {},
+		TabLineSel = { fg = p.foam, style = 'bold' },
 		Title = { fg = p.rose },
 		VertSplit = { fg = p.overlay },
-		Visual = { bg = p.highlight },
+		Visual = { bg = p.highlight_3 },
 		-- VisualNOS = {},
 		WarningMsg = { fg = p.gold },
 		-- Whitespace = {},
@@ -247,9 +247,9 @@ theme.loadLsp = function()
 		LspDiagnosticsVirtualTextHint = { fg = p.iris },
 		LspDiagnosticsVirtualTextInformation = { fg = p.foam },
 		LspDiagnosticsVirtualTextWarning = { fg = p.gold },
-		LspReferenceRead = { fg = p.rose, bg = p.highlight },
-		LspReferenceText = { fg = p.rose, bg = p.highlight },
-		LspReferenceWrite = { fg = p.rose, bg = p.highlight },
+		LspReferenceRead = { bg = p.overlay },
+		LspReferenceText = { bg = p.overlay },
+		LspReferenceWrite = { bg = p.overlay },
 	}
 
 	return lsp
@@ -307,6 +307,7 @@ theme.loadPlugins = function()
 		NvimTreeOpenedFolderName = { fg = p.foam },
 		NvimTreeRootFolder = { fg = p.iris },
 		NvimTreeSpecialFile = { link = 'NvimTreeNormal' },
+		NvimTreeIndentMarker = { link = 'Whitespace' },
 
 		NvimTreeGitDeleted = { fg = p.love },
 		NvimTreeGitDirty = { fg = p.rose },
@@ -350,6 +351,9 @@ theme.loadPlugins = function()
 		TodoBgNOTE = { fg = '#000000', bg = p.iris },
 		TodoFgNOTE = { fg = p.iris, bg = p.base },
 		TodoSignNOTE = { fg = p.iris, bg = p.base },
+
+		-- Telescope
+		TelescopeBorder = { fg = p.foam }
 	}
 
 	return plugins
