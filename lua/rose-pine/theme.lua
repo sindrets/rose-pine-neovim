@@ -67,10 +67,13 @@ theme.loadEditor = function()
 		CursorLineNr = { fg = p.text },
 		DarkenedPanel = { bg = p.surface },
 		DarkenedStatusline = { bg = p.surface },
-		DiffAdd = { fg = p.foam },
-		DiffChange = { fg = p.rose },
-		DiffDelete = { fg = p.love },
-		DiffText = { fg = p.text },
+		DiffAdd = { bg = p.diff_add },
+		DiffDelete = { bg = p.diff_delete },
+		DiffChange = { bg = p.diff_change },
+		DiffText = { bg = p.diff_text },
+		diffAdded = { fg = p.foam },
+		diffRemoved = { fg = p.love },
+		diffChanged = { link = 'PreProc' },
 		Directory = { fg = p.foam, bg = p.none },
 		-- EndOfBuffer = {},
 		ErrorMsg = { fg = p.love, style = 'bold' },
@@ -272,12 +275,12 @@ theme.loadPlugins = function()
 
 		-- gitsigns.nvim
 		-- https://github.com/lewis6991/gitsigns.nvim
-		SignAdd = { fg = p.foam },
-		SignChange = { fg = p.rose },
-		SignDelete = { fg = p.love },
-		GitSignsAdd = { fg = p.foam },
-		GitSignsChange = { fg = p.rose },
-		GitSignsDelete = { fg = p.love },
+		SignAdd = { fg = p.sign_add },
+		SignChange = { fg = p.sign_change },
+		SignDelete = { fg = p.sign_delete },
+		GitSignsAdd = { fg = p.sign_add },
+		GitSignsChange = { fg = p.sign_change },
+		GitSignsDelete = { fg = p.sign_delete },
 
 		-- modes.nvim
 		-- https://github.com/mvllow/modes.nvim

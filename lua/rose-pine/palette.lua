@@ -15,6 +15,13 @@ local palette = {
 	highlight_inactive = '#211f2d',
 	highlight_overlay = '#3a384a',
 	none = 'NONE',
+	diff_add = "#343B4C",
+	diff_delete = "#422D43",
+	diff_change = "#323456",
+	diff_text = "#424674",
+	sign_add = "#488a88",
+	sign_change = "#4e5395",
+	sign_delete = "#925063",
 }
 
 if
@@ -37,6 +44,13 @@ then
 		highlight = '#eee9e6',
 		highlight_inactive = '#f2ede9',
 		highlight_overlay = '#e4dfde',
+		diff_add = "#D2E1DB",
+		diff_delete = "#E8CECF",
+		diff_change = "#D4D1E0",
+		diff_text = "#BCBBD8",
+		sign_add = "#68c8c4",
+		sign_change = "#6d73cf",
+		sign_delete = "#cd718b",
 	}
 elseif
 	vim.g.rose_pine_variant == 'moon'
@@ -58,6 +72,13 @@ then
 		highlight = '#312f44',
 		highlight_inactive = '#2a283d',
 		highlight_overlay = '#3f3c53',
+		diff_add = "#3b4456",
+		diff_delete = "#422D43",
+		diff_change = "#323456",
+		diff_text = "#424674",
+		sign_add = "#57a7a4",
+		sign_change = "#6167b9",
+		sign_delete = "#eb6f92",
 	}
 end
 
