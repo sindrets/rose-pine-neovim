@@ -40,28 +40,6 @@ function util.load()
 	vim.o.termguicolors = true
 	vim.g.colors_name = 'rose-pine'
 
-	local async
-	async = vim.loop.new_async(vim.schedule_wrap(function()
-		theme.loadTerminal()
-		local plugins = theme.loadPlugins()
-		local treesitter = theme.loadTreesitter()
-		local lsp = theme.loadLsp()
-
-		for group, colors in pairs(plugins) do
-			util.highlight(group, colors)
-		end
-
-		for group, colors in pairs(treesitter) do
-			util.highlight(group, colors)
-		end
-
-		for group, colors in pairs(lsp) do
-			util.highlight(group, colors)
-		end
-
-		async:close()
-	end))
-
 	-- load priority groups first
 	local editor = theme.loadEditor()
 	local syntax = theme.loadSyntax()
@@ -75,7 +53,22 @@ function util.load()
 	end
 
 	-- load enhancements (eg. lsp, treesitter, plugins)
-	async:send()
+	theme.loadTerminal()
+	local plugins = theme.loadPlugins()
+	local treesitter = theme.loadTreesitter()
+	local lsp = theme.loadLsp()
+
+	for group, colors in pairs(plugins) do
+		util.highlight(group, colors)
+	end
+
+	for group, colors in pairs(treesitter) do
+		util.highlight(group, colors)
+	end
+
+	for group, colors in pairs(lsp) do
+		util.highlight(group, colors)
+	end
 end
 
 return util
